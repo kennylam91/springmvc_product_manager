@@ -20,10 +20,11 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public void createNewProduct(Product product) {
+    public Map<Integer,Product> createNewProduct(Product product) {
         int key=getRandomId();
         product.setId(key);
         products.put(key,product);
+        return products;
     }
 
     private int getRandomId(){
