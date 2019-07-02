@@ -22,7 +22,7 @@
         <td th:text="${product.name}"></td>
         <td th:text="${product.description}"></td>
         <td th:text="${product.price}"></td>
-        <td>Edit</td>
+        <td><a th:href="@{product/edit(productId=${product.id})}">Edit</a></td>
         <td><a th:href="@{/product/delete(productId=${product.id})}">Delete</a></td>
         <td><a th:href="@{/product/view(productId=${product.id})}">View</a></td>
     </tr>

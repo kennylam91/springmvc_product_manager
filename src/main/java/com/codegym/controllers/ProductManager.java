@@ -51,4 +51,17 @@ public class ProductManager {
         return "redirect:/product";
     }
 
+    @GetMapping("/edit")
+    public String showEditForm(@RequestParam int productId, Model model){
+        Product product=productService.findProductById(productId);
+        model.addAttribute("product",product);
+        return "edit";
+    }
+
+    @PostMapping("/update")
+    public String updateProduct(@ModelAttribute Product product,RedirectAttributes redirectAttributes){
+        productService.updateProduct(product);
+        return "redirect:/product";
+    }
+
 }
