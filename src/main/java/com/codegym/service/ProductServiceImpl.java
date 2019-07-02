@@ -27,6 +27,11 @@ public class ProductServiceImpl implements ProductService {
         return products;
     }
 
+    @Override
+    public Product findProductById(int id) {
+        return products.get(id);
+    }
+
     private int getRandomId(){
         Random random=new Random();
         return random.nextInt(100000);

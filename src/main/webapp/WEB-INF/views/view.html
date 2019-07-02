@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout::header"></head>
+<body>
+<h1>Product detail:</h1>
+<form th:object="${product}">
+    <div>
+        <label>Name</label>
+        <input type="text" th:field="*{name}">
+    </div>
+    <div>
+        <label>Description</label>
+        <input type="text" th:field="*{description}">
+    </div>
+    <div>
+        <label>Price</label>
+        <input type="text" th:field="*{price}">
+    </div>
+</form>
+<a th:href="@{/product}">List product</a>
+
+</body>
+</html>
