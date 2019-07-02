@@ -23,4 +23,11 @@ public class ProductManager {
         model.addAttribute("products",products);
         return "list";
     }
+
+    @GetMapping("/create")
+    public String showCreateForm(Model model){
+        model.addAttribute("product",new Product());
+        return "create";
+    }
+
 }

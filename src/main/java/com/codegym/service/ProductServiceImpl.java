@@ -2,10 +2,7 @@ package com.codegym.service;
 
 import com.codegym.model.Product;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class ProductServiceImpl implements ProductService {
 
@@ -20,5 +17,17 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<Product> findAllProduct() {
         return new ArrayList<>(products.values());
+    }
+
+    @Override
+    public void createNewProduct(Product product) {
+        int key=getRandomId();
+        product.setId(key);
+        products.put(key,product);
+    }
+
+    private int getRandomId(){
+        Random random=new Random();
+        return random.nextInt(100000);
     }
 }
