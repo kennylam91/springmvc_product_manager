@@ -11,4 +11,6 @@ public interface ProductService {
     Map<Integer, Product> createNewProduct(Product product);
 
     Product findProductById(int id);
+
+    void deleteProduct(int id);
 }

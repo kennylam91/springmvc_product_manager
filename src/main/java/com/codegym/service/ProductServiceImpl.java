@@ -36,4 +36,9 @@ public class ProductServiceImpl implements ProductService {
         Random random=new Random();
         return random.nextInt(100000);
     }
+
+    @Override
+    public void deleteProduct(int id) {
+        products.remove(id);
+    }
 }

@@ -45,4 +45,10 @@ public class ProductManager {
         return "view";
     }
 
+    @GetMapping("/delete")
+    public String deleteProduct(@RequestParam int productId,RedirectAttributes redirectAttributes){
+        productService.deleteProduct(productId);
+        return "redirect:/product";
+    }
+
 }
