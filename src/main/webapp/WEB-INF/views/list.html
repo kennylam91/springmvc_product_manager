@@ -3,6 +3,20 @@
 <head th:replace="layout::header"></head>
 <body>
 <h1>Hello world</h1>
+<table border="1">
+    <thead>
+    <tr>
+        <td>Name</td>
+        <td>Description</td>
+        <td>Price</td>
+    </tr>
+    </thead>
+    <tr th:each="product:${products}">
+        <td th:text="${product.name}"></td>
+        <td th:text="${product.description}"></td>
+        <td th:text="${product.price}"></td>
+    </tr>
+</table>
 </body>
 <footer th:replace="layout::footer"></footer>
 </html>
